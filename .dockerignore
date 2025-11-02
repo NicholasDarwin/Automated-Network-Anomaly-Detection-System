@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+*.log
+traffic_log.json
+.git/
+.gitignore
+README.md
+.DS_Store
+*.md
+

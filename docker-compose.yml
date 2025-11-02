@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  web-server:
+    build: .
+    container_name: ddos-target-server
+    ports:
+      - "5000:5000"
+    command: python app.py
+    networks:
+      - ddos-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  protection-system:
+    build: .
+    container_name: ddos-protection-system
+    depends_on:
+      - web-server
+    command: python main.py --server http://web-server:5000
+    networks:
+      - ddos-network
+    volumes:
+      - ./traffic_log.json:/app/traffic_log.json
+    environment:
+      - PYTHONUNBUFFERED=1
+
+networks:
+  ddos-network:
+    driver: bridge
+
