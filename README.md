@@ -171,13 +171,9 @@ Parameters:
 4. **Attack Simulation**: The `DDoSSimulator` can generate various attack types for testing.
 
 ## Security Notes
-
-⚠️ **WARNING**: This tool is for **EDUCATIONAL and RESEARCH purposes only**. 
-
+**WARNING**: This tool is for **EDUCATIONAL and RESEARCH purposes only**. 
 - Do not use this tool against any systems you do not own or have explicit permission to test
-- DDoS attacks are illegal in most jurisdictions
-- Only use on isolated local networks or dedicated test environments
-- Ensure compliance with local laws and regulations
+
 
 ## Troubleshooting
 
